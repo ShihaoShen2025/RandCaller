@@ -14,6 +14,19 @@
     </Window.SystemBackdrop>
 
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!-- 左侧菜单 -->
+        <ListBox Grid.Column="0" Margin="0,0,8,0" SelectedIndex="0">
+            <ListBoxItem Content="常规设置"/>
+            <ListBoxItem Content="高级设置"/>
+        </ListBox>
+        <!-- 右侧设置项 -->
+        <StackPanel Grid.Column="1" Margin="24">
+            <TextBlock Text="示例设置项" FontSize="16" Margin="0,0,0,8"/>
+            <ToggleSwitch x:Name="ExampleSwitch" Header="启用示例功能"/>
+        </StackPanel>
     </Grid>
 </Window>

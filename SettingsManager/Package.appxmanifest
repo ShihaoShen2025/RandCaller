@@ -8,7 +8,7 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="ea55ddf5-34a9-4fa9-8c86-2c7f6397b62d"
+    Name="ShihaoShen.RandCallerSettings"
     Publisher="CN=Shihao Shen"
     Version="1.0.0.0" />
 

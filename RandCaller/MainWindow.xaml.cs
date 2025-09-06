@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
+using Windows.System;
 
 namespace RandCaller
 {
@@ -58,55 +59,34 @@ namespace RandCaller
             SetWindowLong(hwnd, GWL_STYLE, style);
         }
 
-        private void OpenSettingsManager_Click(object sender, RoutedEventArgs e)
+        private static class NativeMethods
+        {
+            [DllImport("user32.dll")]
+            public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+        }
+
+        private void OpenSettingsApp_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                // 获取 SettingsManager.exe 路径
-                string exePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "SettingsManager", "bin", "Debug", "net8.0-windows10.0.26100.0", "SettingsManager.exe");
-                exePath = Path.GetFullPath(exePath);
-                if (!File.Exists(exePath))
+                Process.Start(new ProcessStartInfo
                 {
-                    exePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "SettingsManager", "bin", "Release", "net8.0-windows10.0.26100.0", "SettingsManager.exe");
-                    exePath = Path.GetFullPath(exePath);
-                }
-                if (File.Exists(exePath))
-                {
-                    Process.Start(new ProcessStartInfo
-                    {
-                        FileName = exePath,
-                        UseShellExecute = true
-                    });
-                }
-                else
-                {
-                    var dialog = new ContentDialog
-                    {
-                        Title = "无法打开高级设置",
-                        Content = $"未找到 SettingsManager.exe。请先编译 SettingsManager 项目。",
-                        CloseButtonText = "确定",
-                        XamlRoot = this.Content.XamlRoot
-                    };
-                    _ = dialog.ShowAsync();
-                }
+                    FileName = "explorer.exe",
+                    Arguments = "shell:AppsFolder\\ShihaoShen.RandCallerSettings_7yj6kja88582a!App",
+                    UseShellExecute = true
+                });
             }
             catch (Exception ex)
             {
                 var dialog = new ContentDialog
                 {
-                    Title = "无法打开高级设置",
+                    Title = "无法打开设置应用",
                     Content = $"错误: {ex.Message}",
                     CloseButtonText = "确定",
                     XamlRoot = this.Content.XamlRoot
                 };
                 _ = dialog.ShowAsync();
             }
-        }
-
-        private static class NativeMethods
-        {
-            [DllImport("user32.dll")]
-            public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
         }
     }
 }

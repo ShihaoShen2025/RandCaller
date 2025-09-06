@@ -10,7 +10,7 @@
     Title="RandCaller">
 
     <Window.SystemBackdrop>
-        <MicaBackdrop />
+        <DesktopAcrylicBackdrop />
     </Window.SystemBackdrop>
 
     <Grid>
@@ -25,9 +25,8 @@
                     Margin="8,0,0,0">
                 <Button.Flyout>
                     <MenuFlyout>
-                        <MenuFlyoutItem Text="示例菜单项1"/>
-                        <MenuFlyoutItem Text="示例菜单项2"/>
-                        <MenuFlyoutItem Text="打开高级设置" Click="OpenSettingsManager_Click"/>
+                        <MenuFlyoutItem Text="仍在开发中……请勿用于生产用途"/>
+                        <MenuFlyoutItem Text="打开设置应用" Click="OpenSettingsApp_Click"/>
                     </MenuFlyout>
                 </Button.Flyout>
             </Button>
