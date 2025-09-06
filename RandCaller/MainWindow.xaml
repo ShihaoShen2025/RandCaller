@@ -27,6 +27,7 @@
                     <MenuFlyout>
                         <MenuFlyoutItem Text="示例菜单项1"/>
                         <MenuFlyoutItem Text="示例菜单项2"/>
+                        <MenuFlyoutItem Text="打开高级设置" Click="OpenSettingsManager_Click"/>
                     </MenuFlyout>
                 </Button.Flyout>
             </Button>

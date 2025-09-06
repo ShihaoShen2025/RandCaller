@@ -8,14 +8,14 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="395a4ead-822d-4a15-949a-da61e618d59a"
+    Name="ea55ddf5-34a9-4fa9-8c86-2c7f6397b62d"
     Publisher="CN=Shihao Shen"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="395a4ead-822d-4a15-949a-da61e618d59a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="ea55ddf5-34a9-4fa9-8c86-2c7f6397b62d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>RandCaller</DisplayName>
+    <DisplayName>RandCaller Settings</DisplayName>
     <PublisherDisplayName>Shihao Shen</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -34,8 +34,8 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="RandCaller"
-        Description="RandCaller"
+        DisplayName="RandCaller 设置"
+        Description="RandCaller 设置"
         BackgroundColor="transparent"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png">

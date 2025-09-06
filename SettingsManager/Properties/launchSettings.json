@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SettingsManager (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SettingsManager (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
