@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RandCaller (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "RandCaller (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
